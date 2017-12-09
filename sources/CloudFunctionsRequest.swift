@@ -31,6 +31,10 @@ extension CloudFunctionsRequest {
         return baseAuthFields
     }
 
+    public var originalHeaderFields: [String: String] {
+        return [:]
+    }
+    
     public var headerFields: [String : String] {
         let f = authFields
         return f.reduce(into: originalHeaderFields) { $0[$1.key] = $1.value }
