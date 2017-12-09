@@ -10,8 +10,7 @@ import Foundation
 
 public protocol CloudFunctionsAuth {
     var id: String { get }
-    var cfToken: String { get }
-    var deviceID: String { get }
+    var token: String { get }
 }
 
 public struct AuthKeys {

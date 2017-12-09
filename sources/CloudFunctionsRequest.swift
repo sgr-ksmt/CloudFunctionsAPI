@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 
 public protocol CloudFunctionsRequest: Request {
-    var user: CloudFunctionsAuth { get }
+    var auth: CloudFunctionsAuth { get }
     var authFields: [String: String] { get }
     var originalHeaderFields: [String: String] { get }
 }
@@ -22,8 +22,8 @@ extension CloudFunctionsRequest {
 
     public var baseAuthFields: [String: String]  {
         return [
-            AuthKeys.id: user.id,
-            AuthKeys.token: user.cfToken,
+            AuthKeys.id: auth.id,
+            AuthKeys.token: auth.token,
         ]
     }
 

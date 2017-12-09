@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "CloudFunctionsAPI"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Provides secure request between client and Cloud Functions"
   s.homepage         = "https://github.com/sgr-ksmt/CloudFunctionsAPI"
   s.license          = 'MIT'
