@@ -16,7 +16,7 @@ public protocol CloudFunctionsRequest: Request {
 }
 
 extension CloudFunctionsRequest {
-    var baseURL: URL {
+    public var baseURL: URL {
         return CloudFunctionsAPI.Configuration.shared.baseURL
     }
 
@@ -27,11 +27,11 @@ extension CloudFunctionsRequest {
         ]
     }
 
-    var authFields: [String: String] {
+    public var authFields: [String: String] {
         return baseAuthFields
     }
 
-    var headerFields: [String : String] {
+    public var headerFields: [String : String] {
         let f = authFields
         return f.reduce(into: originalHeaderFields) { $0[$1.key] = $1.value }
     }

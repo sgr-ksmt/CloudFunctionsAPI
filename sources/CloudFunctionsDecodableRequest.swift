@@ -14,15 +14,15 @@ public protocol CloudFunctionsDecodableRequest: CloudFunctionsRequest where Resp
 }
 
 extension CloudFunctionsDecodableRequest {
-    var dataParser: DataParser {
+    public var dataParser: DataParser {
         return DecodableDataParser()
     }
 
-    var decoder: JSONDecoder {
+    public var decoder: JSONDecoder {
         return JSONDecoder()
     }
 
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         guard let data = object as? Data else {
             throw ResponseError.unexpectedObject(object)
         }
